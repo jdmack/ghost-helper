@@ -1,0 +1,72 @@
+.border {
+    border-style: solid;
+}
+div#output {
+    display: inline-block;
+    vertical-align: top;
+}
+#button-evidence_reset {
+    margin-bottom: 10px;
+    background-color: #f44336;
+    color: white;
+}
+.debug {
+    font-size: large;
+    margin: 5px;
+}
+
+legend {
+}
+
+fieldset {
+    display: inline-block;
+    width: 200px;
+    /*box_sizing: border-box;*/
+    /*align-items: center;*/
+}
+
+.evidence_label {
+    width:100%;
+    box-sizing: border-box;
+}
+
+div#main {
+    width: 700px;
+    text-align: center;
+    display: inline-block;
+}
+div#evidence {
+    display: inline-block;
+    margin: 0 auto;
+}
+div#ghost_results {
+
+}
+
+
+
+
+label {
+    box_sizing: border-box;
+    /*display: block;*/
+    /*clear:both;*/
+}
+
+
+
+div.ghost_card {
+    /*text-align: center;*/
+    /*align-items: center;*/
+    border: solid;
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+    width: 175px;
+}
+div.list_ghost_evidence {
+    display: inline-block;
+}
+ul {
+    /*list-style-position: inside;*/
+    text-align: left;
+    padding: 10px;
+}
