@@ -86,8 +86,8 @@ function evidenceClick()
     let name = $(this).attr("name");
     let results = name.match(/evidence-(\d+)/);
     let evidenceIndex = parseInt(results[1]) - 1;
+    if (selectedEvidence[evidenceIndex] == "") ++numSelectedEvidence;
     selectedEvidence[evidenceIndex] = $(this).val(); 
-    ++numSelectedEvidence;
     log("value: " + $(this).val());
     log("Evidence updated: + " + JSON.stringify(selectedEvidence));
 
