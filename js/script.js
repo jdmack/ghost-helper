@@ -6,6 +6,7 @@ var selectedEvidence = [
 ];
 
 var numSelectedEvidence = 0;
+var DEBUG = false;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -13,6 +14,8 @@ var numSelectedEvidence = 0;
 $(document).ready(function()
 {
     // alert("Clicked - ");
+
+    if (!DEBUG) $("#output").hide();
 
     $( function() {
         $("input:radio[name|='evidence']").checkboxradio({
