@@ -1,3 +1,7 @@
+body {
+    background-color: black;
+    color: grey;
+}
 .border {
     border-style: solid;
 }
@@ -21,13 +25,27 @@ legend {
 fieldset {
     display: inline-block;
     width: 200px;
+    background-color: #292929;
     /*box_sizing: border-box;*/
     /*align-items: center;*/
 }
+.ui-checkboxradio-label {
+    background-color: red; !important
+}
 
+.ui-button {
+    background-color: red; !important
+}
+.ui-widget {
+    background-color: red; !important
+}
+.ui-checkboxradio-radio-label {
+    background-color: red; !important
+}
 .evidence_label {
     width:100%;
     box-sizing: border-box;
+    background-color: red; !important
 }
 
 div#main {
@@ -50,6 +68,8 @@ label {
     box_sizing: border-box;
     /*display: block;*/
     /*clear:both;*/
+    background-color: red;
+    color: red;
 }
 
 
@@ -61,6 +81,7 @@ div.ghost_card {
     display: inline-block;
     padding: 0px 10px 0px 10px;
     width: 175px;
+    background-color: #404040;
 }
 div.list_ghost_evidence {
     display: inline-block;
