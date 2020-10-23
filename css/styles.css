@@ -70,3 +70,8 @@ ul {
     text-align: left;
     padding: 10px;
 }
+
+li.crossed {
+    color: gray;
+    text-decoration: line-through;
+}

@@ -40,7 +40,7 @@ var ghosts = [
         name: "Wraith",
         evidence: [
             "fingerprints",
-            "fingerprints",
+            "freezing_temperatures",
             "spirit_box"
         ]
     },

@@ -5,6 +5,8 @@ var selectedEvidence = [
     ""
 ];
 
+var numSelectedEvidence = 0;
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 ///////////////////////////////////////////////////////////////////////////////
@@ -45,11 +47,14 @@ $(document).ready(function()
     let resultsDiv = $("#ghost_results");
 
     resultsDiv.append("<h2>Results</h2>");
+    let list = resultsDiv.append("<ul></ul>")
+        .attr("id", "sortable");
 
     for (let i = 0; i < ghosts.length; ++i) {
-        resultsDiv.append(createGhostCard(ghosts[i]));
+        list.append(createGhostCard(ghosts[i]));
     }
-
+    $("#sortable").sortable();
+    $("#sortable").sortable("option", "disabled", true);
     // Set Radio Clicked Event Handler
     $("input:radio[name|='evidence']").change(evidenceClick);
 
@@ -59,12 +64,13 @@ $(document).ready(function()
 //
 ///////////////////////////////////////////////////////////////////////////////
 function evidenceResetClick()
-{
-    log("reset");
+{ log("reset");
     $("input:radio[name|='evidence']:checked").prop("checked", false).checkboxradio("refresh");
 
     for (let i = 0; i < selectedEvidence.length; ++i) selectedEvidence[i] = "";
+    numSelectedEvidence = 0;
     log("Evidence reset: + " + JSON.stringify(selectedEvidence));
+    updateResults();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -78,8 +84,11 @@ function evidenceClick()
     let results = name.match(/evidence-(\d+)/);
     let evidenceIndex = parseInt(results[1]) - 1;
     selectedEvidence[evidenceIndex] = $(this).val(); 
+    ++numSelectedEvidence;
     log("value: " + $(this).val());
     log("Evidence updated: + " + JSON.stringify(selectedEvidence));
+
+    updateResults();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -97,6 +106,31 @@ function log(string)
 ///////////////////////////////////////////////////////////////////////////////
 function updateResults()
 {
+    // 1. Select all ghost cards
+    // iterate through and change classes to cross out and grey out evidence
+    // that is selected
+    // Hide cards that don't have required evidence
+    $("div[id|='card']").each(function(index) {
+        log("processing: " + ($(this).attr("id")));
+        let matches = 0;
+        $("li", this).each(function(index) {
+            log("processing: " + ($(this).html()));
+            if (selectedEvidence.includes($("span", this).html())) {
+                $(this).addClass("crossed");
+                ++matches;
+            }
+            else {
+                $(this).removeClass("crossed");
+            }
+        });
+        if (matches != numSelectedEvidence) {
+            $(this).hide();
+            log("hiding: " + $(this).attr("id"));
+        }
+        else {
+            $(this).show();
+        }
+    });
 
 }
 
@@ -142,7 +176,10 @@ function createGhostCard(ghost)
         .attr("class", "list_evidence");
     for (i = 0; i < ghost.evidence.length; ++i) {
         list.append($("<li></li>")
-            .html(evidence_keys.find(evidence => evidence.key == ghost.evidence[i]).name));
+            .html(evidence_keys.find(evidence => evidence.key == ghost.evidence[i]).name)
+            .append($("<span></span>")
+                .html(evidence_keys.find(evidence => evidence.key == ghost.evidence[i]).key)
+                .hide()));
     }
     card.append($("<div></div>")
         .addClass("list_ghost_evidence")
