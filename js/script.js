@@ -16,6 +16,7 @@ $(document).ready(function()
     // alert("Clicked - ");
 
     if (!DEBUG) $("#output").hide();
+    else $("output").show();
 
     $( function() {
         $("input:radio[name|='evidence']").checkboxradio({
@@ -87,7 +88,29 @@ function evidenceClick()
     let results = name.match(/evidence-(\d+)/);
     let evidenceIndex = parseInt(results[1]) - 1;
     if (selectedEvidence[evidenceIndex] == "") ++numSelectedEvidence;
+
+    let savedEvidence = selectedEvidence[evidenceIndex];
+    if (savedEvidence != "") {
+        for (let i = 0; i < selectedEvidence.length; ++i) {
+        $("#evidence-" + (i + 1) + "-" + savedEvidence)
+            .checkboxradio("option", "disabled", false);
+        }
+    }
+
+
     selectedEvidence[evidenceIndex] = $(this).val(); 
+
+    for (let i = 0; i < selectedEvidence.length; ++i) {
+        if (i == evidenceIndex) continue;
+            // evidence-1-emf_level_5
+        let s = "#evidence-" + (i + 1) + "-" + $(this).val();
+        log ("disabling: " + s);
+        // $("#evidence-" + (i + 1) + "-" + $(this).val())
+        $(s)
+            .checkboxradio("option", "disabled", true);
+    }
+
+
     log("value: " + $(this).val());
     log("Evidence updated: + " + JSON.stringify(selectedEvidence));
 
