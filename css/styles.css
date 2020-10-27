@@ -3,7 +3,7 @@ body {
     color: #e6e6e6;
 }
 .border {
-    border-style: solid;
+    border-style: outset;
 }
 div#output {
     display: inline-block;
@@ -29,19 +29,6 @@ fieldset {
     /*box_sizing: border-box;*/
     /*align-items: center;*/
 }
-.ui-checkboxradio-label {
-    background-color: red; !important
-}
-
-.ui-button {
-    background-color: red; !important
-}
-.ui-widget {
-    background-color: red; !important
-}
-.ui-checkboxradio-radio-label {
-    background-color: red; !important
-}
 .evidence_label {
     width:100%;
     box-sizing: border-box;
@@ -56,9 +43,14 @@ div#main {
 div#evidence {
     display: inline-block;
     margin: 0 auto;
+    border: inset;
 }
 div#ghost_results {
+    border: inset;
+}
 
+.list_evidence {
+    padding-top: 0px;
 }
 
 label {
@@ -74,11 +66,12 @@ label {
 div.ghost_card {
     /*text-align: center;*/
     /*align-items: center;*/
-    border: solid;
+    border-style: groove;
     display: inline-block;
-    padding: 0px 10px 0px 10px;
+    padding: 10px 5px 0px 5px;
     width: 175px;
     background-color: #404040;
+    margin: 5px;
 }
 div.list_ghost_evidence {
     display: inline-block;
@@ -125,4 +118,10 @@ li.crossed {
   .ghost-card-tooltip .ghost-card-tooltip-content h2 {
       text-align: center;
       font-weight: normal;
+  }
+
+  .ghost_card-legend {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }

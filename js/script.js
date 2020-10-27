@@ -53,15 +53,15 @@ $(document).ready(function()
     let resultsDiv = $("#ghost_results");
 
     resultsDiv.append("<h2>Results</h2>");
-    let list = resultsDiv.append("<ul></ul>")
-        .attr("id", "sortable");
+    // let list = resultsDiv.append("<ul></ul>");
+        // .attr("id", "sortable");
 
     for (let i = 0; i < ghosts.length; ++i) {
-        list.append(createGhostCard(ghosts[i]));
+        resultsDiv.append(createGhostCard(ghosts[i]));
     }
     $(document).tooltip();
-    $("#sortable").sortable();
-    $("#sortable").sortable("option", "disabled", true);
+    // $("#sortable").sortable();
+    // $("#sortable").sortable("option", "disabled", true);
     // Set Radio Clicked Event Handler
     $("input:radio[name|='evidence']").change(evidenceClick);
 
@@ -204,6 +204,7 @@ function createGhostCard(ghost)
         .append($("<legend></legend>")
             .attr("id", "legend_card-" + ghost.key)
             .html(ghost.name)
+            .addClass("ghost_card-legend")
         )
         .append($("<span></span>")
             .html("<h2>" + ghost.name + "</h2>" + 
