@@ -40,7 +40,7 @@ div#main {
     width: 700px;
     text-align: center;
     display: inline-block;
-    background-image: url(../media/background.png);
+    background-image: url(../media/background.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-origin: border-box;
@@ -50,7 +50,7 @@ div#evidence {
     display: inline-block;
     margin: 0 auto;
     border: inset;
-    padding-top: 300px;
+    padding-top: 200px;
 }
 div#ghost_results {
     border: inset;
