@@ -33,7 +33,7 @@ $(document).ready(function()
 
     let evidenceDiv = $("#evidence");
 
-    evidenceDiv.append("<h2>Evidence</h2>");
+    // evidenceDiv.append("<h2>Evidence</h2>");
 
 
     evidenceDiv.append($("<div></div>")
@@ -52,7 +52,7 @@ $(document).ready(function()
         .attr("id", "ghost_results"));
     let resultsDiv = $("#ghost_results");
 
-    resultsDiv.append("<h2>Results</h2>");
+    //resultsDiv.append("<h2>Results</h2>");
     // let list = resultsDiv.append("<ul></ul>");
         // .attr("id", "sortable");
 
