@@ -14,7 +14,9 @@ var DEBUG = false;
 $(document).ready(function()
 {
     // alert("Clicked - ");
-
+    $("#test").tooltip({
+        content: "This is a test"
+    });
     if (!DEBUG) $("#output").hide();
     else $("output").show();
 
@@ -57,6 +59,7 @@ $(document).ready(function()
     for (let i = 0; i < ghosts.length; ++i) {
         list.append(createGhostCard(ghosts[i]));
     }
+    $(document).tooltip();
     $("#sortable").sortable();
     $("#sortable").sortable("option", "disabled", true);
     // Set Radio Clicked Event Handler
@@ -200,7 +203,15 @@ function createGhostCard(ghost)
         .attr("class", "ghost_card")
         .append($("<legend></legend>")
             .attr("id", "legend_card-" + ghost.key)
-            .html(ghost.name));
+            .html(ghost.name)
+        )
+        .append($("<span></span>")
+            .html("<h2>" + ghost.name + "</h2>" + 
+                "<p>" + ghost.description + "</p>" + 
+                "<p>" + "Unique Strengths: " + ghost.strengths + "</p>" +
+                "<p>" + "Weaknesses: " + ghost.weaknesses + "</p>")
+            .addClass("ghost-card-tooltip-content"))
+        .addClass("ghost-card-tooltip");
     let list = $("<ul></ul>")
         .attr("id", "list_card_evidence-" + ghost.key)
         .attr("class", "list_evidence");
@@ -214,6 +225,12 @@ function createGhostCard(ghost)
     card.append($("<div></div>")
         .addClass("list_ghost_evidence")
         .append(list));
+
+    // Tooltip
+    // // card.tooltip({
+    // $("#card-" + ghost.name).tooltip({
+    //     content: ghost.description
+    // });
 
     return card;
 }

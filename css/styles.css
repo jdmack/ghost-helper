@@ -61,9 +61,6 @@ div#ghost_results {
 
 }
 
-
-
-
 label {
     box_sizing: border-box;
     /*display: block;*/
@@ -96,3 +93,36 @@ li.crossed {
     color: gray;
     text-decoration: line-through;
 }
+
+
+.ghost-card-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .ghost-card-tooltip .ghost-card-tooltip-content {
+    visibility: hidden;
+    width: 300px;
+    color: black;
+    text: "Book Antiqua";
+    text-align: left;
+    border-radius: 6px;
+    padding: 0px 20px 10px 20px;
+    background-image: url(../media/parchment.jpg);
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -100px;
+    left: 95%;
+  }
+  
+  .ghost-card-tooltip:hover .ghost-card-tooltip-content {
+    visibility: visible;
+  }
+
+  .ghost-card-tooltip .ghost-card-tooltip-content h2 {
+      text-align: center;
+      font-weight: normal;
+  }
