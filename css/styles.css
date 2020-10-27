@@ -1,9 +1,10 @@
 body {
     background-color: black;
     color: #e6e6e6;
+    font-family: Arial, Helvetica, sans-serif
 }
 .border {
-    border-style: solid;
+    border-style: outset;
 }
 div#output {
     display: inline-block;
@@ -29,19 +30,6 @@ fieldset {
     /*box_sizing: border-box;*/
     /*align-items: center;*/
 }
-.ui-checkboxradio-label {
-    background-color: red; !important
-}
-
-.ui-button {
-    background-color: red; !important
-}
-.ui-widget {
-    background-color: red; !important
-}
-.ui-checkboxradio-radio-label {
-    background-color: red; !important
-}
 .evidence_label {
     width:100%;
     box-sizing: border-box;
@@ -60,13 +48,15 @@ div#evidence {
     display: inline-block;
     margin: 0 auto;
     padding-top: 200px;
+    border: inset;
 }
 div#ghost_results {
-
+    border: inset;
 }
 
-
-
+.list_evidence {
+    padding-top: 0px;
+}
 
 label {
     box_sizing: border-box;
@@ -81,11 +71,12 @@ label {
 div.ghost_card {
     /*text-align: center;*/
     /*align-items: center;*/
-    border: solid;
+    border-style: groove;
     display: inline-block;
-    padding: 0px 10px 0px 10px;
-    width: 175px;
+    padding: 10px 5px 0px 5px;
+    width: 200px;
     background-color: #404040;
+    margin: 5px;
 }
 div.list_ghost_evidence {
     display: inline-block;
@@ -100,3 +91,44 @@ li.crossed {
     color: gray;
     text-decoration: line-through;
 }
+
+
+.ghost-card-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .ghost-card-tooltip .ghost-card-tooltip-content {
+    visibility: hidden;
+    width: 300px;
+    color: black;
+    text: "Book Antiqua";
+    text-align: left;
+    border-radius: 6px;
+    padding: 0px 20px 10px 20px;
+    background-image: url(../media/parchment.jpg);
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -100px;
+    left: 95%;
+
+    pointer-events: none;
+  }
+  
+  .ghost-card-tooltip:hover .ghost-card-tooltip-content {
+    visibility: visible;
+  }
+
+  .ghost-card-tooltip .ghost-card-tooltip-content h2 {
+      text-align: center;
+      font-weight: normal;
+  }
+
+  .ghost_card-legend {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
