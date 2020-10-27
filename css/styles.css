@@ -52,10 +52,14 @@ div#main {
     width: 700px;
     text-align: center;
     display: inline-block;
+    background-image: url(../media/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 div#evidence {
     display: inline-block;
     margin: 0 auto;
+    padding-top: 200px;
 }
 div#ghost_results {
 
