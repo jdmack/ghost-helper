@@ -110,6 +110,8 @@ li.crossed {
     z-index: 1;
     top: -100px;
     left: 95%;
+
+    pointer-events: none;
   }
   
   .ghost-card-tooltip:hover .ghost-card-tooltip-content {
