@@ -74,6 +74,10 @@ function evidenceResetClick()
     for (let i = 0; i < selectedEvidence.length; ++i) selectedEvidence[i] = "";
     numSelectedEvidence = 0;
     log("Evidence reset: + " + JSON.stringify(selectedEvidence));
+
+    // re-enable evidence labels
+    $("input:radio[name|='evidence']").checkboxradio("option", "disabled", false);
+
     updateResults();
 }
 
