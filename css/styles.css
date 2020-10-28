@@ -1,7 +1,8 @@
 body {
     background-color: black;
     color: #e6e6e6;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 .border {
     border-style: outset;
@@ -139,6 +140,8 @@ li.crossed {
   footer {
     padding: 3px;
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #454545;
     width: 700px;
     text-align: center;
