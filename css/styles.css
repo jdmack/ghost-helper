@@ -35,7 +35,6 @@ fieldset {
 .evidence_label {
     width:100%;
     box-sizing: border-box;
-    background-color: red; !important
 }
 
 div#main {
@@ -151,6 +150,10 @@ li.crossed {
   footer a {
     color: white;
     text-decoration: none
+  }
+  footer a:hover {
+    color: #0066ff;
+    text-decoration: bold;
   }
   footer img {
     vertical-align: text-bottom;
