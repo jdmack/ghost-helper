@@ -26,6 +26,7 @@ legend {
 fieldset {
     display: inline-block;
     width: 200px;
+    margin-bottom: 5px;
     /*background-color: #292929;*/
     /*box_sizing: border-box;*/
     /*align-items: center;*/
@@ -42,7 +43,7 @@ div#main {
     display: inline-block;
     background-image: url(../media/background.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
     background-origin: border-box;
     background-position: center top;
 }
@@ -50,7 +51,7 @@ div#evidence {
     display: inline-block;
     margin: 0 auto;
     border: inset;
-    padding-top: 200px;
+    padding-top: 120px;
 }
 div#ghost_results {
     border: inset;
@@ -78,7 +79,6 @@ div.ghost_card {
     padding: 10px 5px 0px 5px;
     width: 200px;
     background-color: rgba(64, 64, 64, 0.5);
-    opacity: 0.5;
     margin: 5px;
 }
 div.list_ghost_evidence {
@@ -133,5 +133,29 @@ li.crossed {
   .ghost_card-legend {
       font-size: 24px;
       font-weight: bold;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+  }
+
+  footer {
+    padding: 3px;
+    margin-top: 10px;
+    background-color: #454545;
+    width: 700px;
+    text-align: center;
+
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none
+  }
+  footer img {
+    vertical-align: text-bottom;
+  }
+  footer hr {
+    padding: 0px;
+    margin: 0px;
+    border-color: black;
+    border-width: 2px;
+    border-style: ridge none none none;
   }
