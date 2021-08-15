@@ -170,5 +170,29 @@ var ghosts = [
         strengths: "Oni are much more active when people are nearby and have been seen to move objects at great speed.",
         weaknesses: "Being more active will make the Oni easier to find and identify."
     },
+    {
+        key: "hantu",
+        name: "Hantu",
+        evidence: [
+            "fingerprints",
+            "ghost_writing",
+            "ghost_orb"
+        ],
+        description: "TBD",
+        strengths: "Moves faster in colder areas.",
+        weaknesses: "Moves slower in warmer areas."
+    },
+    {
+        key: "oni",
+        name: "Oni",
+        evidence: [
+            "emf_level_5",
+            "spirit_box",
+            "ghost_writing"
+        ],
+        description: "Oni, which are a cousin to the Demon, possess extreme strength and are known to become much more active around their prey.",
+        strengths: "Oni are much more active when people are nearby and have been seen to move objects at great speed.",
+        weaknesses: "Being more active will make the Oni easier to find and identify."
+    },
 ];
 
