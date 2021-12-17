@@ -23,6 +23,10 @@ var evidence_keys = [
         key: "freezing_temperatures",
         name: "Freezing Temperatures"
     },
+    {
+        key: "dots",
+        name: "D.O.T.S Projector"
+    }
 ];
 
 var ghosts = [
@@ -178,21 +182,45 @@ var ghosts = [
             "ghost_writing",
             "ghost_orb"
         ],
-        description: "TBD",
+        description: "A rare ghost that can be found in hot climates. They are known to attack more often in cold weather.",
         strengths: "Moves faster in colder areas.",
         weaknesses: "Moves slower in warmer areas."
     },
     {
-        key: "oni",
-        name: "Oni",
+        key: "yokai",
+        name: "Yokai",
         evidence: [
-            "emf_level_5",
             "spirit_box",
+            "ghost_orb",
             "ghost_writing"
         ],
-        description: "Oni, which are a cousin to the Demon, possess extreme strength and are known to become much more active around their prey.",
-        strengths: "Oni are much more active when people are nearby and have been seen to move objects at great speed.",
-        weaknesses: "Being more active will make the Oni easier to find and identify."
+        description: "A common type of ghost that is attracted to human voices. They can usually be found haunting family homes.",
+        strengths: "Talking near a Yokai will anger it and cause it to attack more often.",
+        weaknesses: "While hunting, it can only hear voices close to it."
     },
+    {
+        key: "goryo",
+        name: "Goryo",
+        evidence: [
+            "emf_level_5",
+            "fingerprints",
+            "dots_projector"
+        ],
+        description: "Using a video camera is the only way to view a Goryo, when it passes through a DOTS projector.",
+        strengths: "A Goryo will usually only show itself on cameras if there are no people nearby.",
+        weaknesses: "They are rarely seen far from their place of death."
+    },
+    {
+        key: "myling",
+        name: "Myling",
+        evidence: [
+            "emf_level_J",
+            "fingerprints",
+            "ghost_writing"
+        ],
+        description: "A Myling is a very vocal and active ghost. They are rumoured to be quiet when hunting their prey.",
+        strengths: "A Myling is known to be quieter when hunting.",
+        weaknesses: "Mylings more frequently make paranormal sounds."
+    }
 ];
 
