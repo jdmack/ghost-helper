@@ -24,7 +24,7 @@ var evidence_keys = [
         name: "Freezing Temperatures"
     },
     {
-        key: "dots",
+        key: "dots_projector",
         name: "D.O.T.S Projector"
     }
 ];
@@ -34,37 +34,37 @@ var ghosts = [
         key: "spirit",
         name: "Spirit",
         evidence: [
+            "emf_level_5",
             "spirit_box",
-            "fingerprints",
             "ghost_writing"
         ],
-        description: "A Spirit is the most common Ghost you will come across however it is still very powerful and dangerous. They are usually discovered at one of their hunting grounds after an unexplained death.",
-        strengths: "None. The Spirit has no unique powers, making it easier to survive but harder to identify.",
-        weaknesses: "Using Smudge Sticks on a Spirit will stop it attacking for twice as long as other Ghosts."
+        description: "Spirits are very common ghosts. They are very powerful, but passive, only attacking when they need to. They defend their place of death to the utmost degree, killing anyone that is caught overstaying their welcome.",
+        strengths: "None.",
+        weaknesses: "A Spirit can be temporarily stopped by burning Smudge Sticks near them."
     },
     {
         key: "wraith",
         name: "Wraith",
         evidence: [
-            "fingerprints",
-            "freezing_temperatures",
-            "spirit_box"
+            "emf_level_5",
+            "spirit_box",
+            "dots_projector"
         ],
-        description: "A Wraith is one of the most dangerous Ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
-        strengths: "Wraiths almost never touch the ground, meaning it can't be tracked by footsteps. It can travel through walls and doors without opening them, and will not leave footprints on the ground.",
-        weaknesses: "Wraiths have a toxic reaction to Salt. If a Wraith comes into contact with a pile of salt, it will immediately cease attacking."
+        description: "Wraiths are one of the most dangerous ghosts you will find. It is also the only known ghost that has the ability of flight and has sometimes been known to travel through walls.",
+        strengths: "Wraiths almost never touch the ground, meaning it can't be tracked by footsteps.",
+        weaknesses: "Wraiths have a toxic reaction to Salt."
     },
     {
         key: "phantom",
         name: "Phantom",
         evidence: [
-            "emf_level_5",
-            "ghost_orb",
-            "freezing_temperatures"
+            "spirit_box",
+            "fingerprints",
+            "dots_projector"
         ],
-        description: "A Phantom is a Ghost that can possess the living, most commonly summoned by a Ouija Board. It also induces fear into those around it.",
-        strengths: "Looking at a Phantom will considerably drop your Sanity. This refers to any visible manifestations of the Phantom, including during a Hunt.",
-        weaknesses: "Taking a photo of the Phantom will make it temporarily disappear. The Photo Camera will make it disappear, but it will not stop a Hunt."
+        description: "A Phantom is a ghost that can possess the living, inducing fear into those around it. They are most commonly summoned from Ouija Boards.",
+        strengths: "Looking at a Phantom will drop your sanity considerably faster.",
+        weaknesses: "Taking a photo of the Phantom will make it temporarily disappear."
     },
     {
         key: "poltergeist",
@@ -72,35 +72,35 @@ var ghosts = [
         evidence: [
             "spirit_box",
             "fingerprints",
-            "ghost_orb"
+            "ghost_writing"
         ],
-        description: "One of the most famous Ghosts, a Poltergeist, also known as a noisy ghost can manipulate objects around it to spread fear into it's victims.",
-        strengths: "A Poltergeist is capable of influencing more objects at once than any other Ghosts, and is capable of shutting multiple doors at once.",
-        weaknesses: "A Poltergeist is almost ineffective in an empty room."
+        description: "One of the most famous ghosts, the Poltergeist. Known to manipulate objects around it to spread fear into its victims.",
+        strengths: "Poltergeists can throw multiple objects at once.",
+        weaknesses: "With nothing to throw, Poltergeists become powerless."
     },
     {
         key: "banshee",
         name: "Banshee",
         evidence: [
-            "emf_level_5",
             "fingerprints",
-            "freezing_temperatures"
+            "ghost_orb",
+            "dots_projector"
         ],
-        description: "The Banshee is a natural hunter and will not be picky with who it attacks. It is also known to stalk its prey one at a time until its ready to go in for the kill.",
-        strengths: "A Banshee will focus on one player at a time until it kills them.",
-        weaknesses: "Banshees fear the Crucifix, which boosts the Hunt-stopping range of one from 3 meters to 5 meters against it."
+        description: "The singing siren, known for attracting its victims through song. It has been known to single out its prey before making a killing blow.",
+        strengths: "A Banshee will only target one person at a time.",
+        weaknesses: "Banshees fear the Crucifix and will be less aggressive near one."
     },
     {
         key: "jinn",
         name: "Jinn",
         evidence: [
-            "spirit_box",
-            "ghost_orb",
-            "emf_level_5"
+            "emf_level_5",
+            "fingerprints",
+            "freezing_temperatures"
         ],
-        description: "A Jinn is a territorial ghost that will attack when it feels threatened. It can also travel at very high speeds.",
-        strengths: "If its victim is far away, a Jinn will travel at a faster speed than normal.",
-        weaknesses: "Turning off the locations power source will prevent the Jinn from using its ability."
+        description: "A Jinn is a territorial ghost that will attack when threatened. It has also been known to be able to travel at significant speed.",
+        strengths: "A Jinn will travel at a faster speed if its victim is far away.",
+        weaknesses: "Turning off the location's power source will prevent the Jinn from using its ability."
     },
     {
         key: "mare",
@@ -108,9 +108,9 @@ var ghosts = [
         evidence: [
             "spirit_box",
             "ghost_orb",
-            "freezing_temperatures"
+            "ghost_writing"
         ],
-        description: "A Mare is the source of all nightmares, which makes it most powerful in the dark.",
+        description: "A Mare is the source of all nightmares, making it most powerful in the dark.",
         strengths: "A Mare will have an increased chance to attack in the dark.",
         weaknesses: "Turning the lights on around the Mare will lower its chance to attack."
     },
@@ -118,73 +118,61 @@ var ghosts = [
         key: "revenant",
         name: "Revenant",
         evidence: [
-            "emf_level_5",
-            "fingerprints",
-            "ghost_writing"
+            "ghost_orb",
+            "ghost_writing",
+            "freezing_temperatures"
         ],
-        description: "A Revenant is a slow but violent ghost that will attack its victims indiscriminately. Additionally, it has been rumored to travel at alarmingly high speeds when hunting.",
-        strengths: "When hunting a victim, a Revenant will travel at a significantly faster speed.",
-        weaknesses: "Hiding from a Revenant will cause it to move very slowly."
+        description: "A Revenant is a violent ghost that will attack indiscriminately. Their speed can be deceiving as they are slow while dormant: however, as soon as they hunt they can move incredibly fast.",
+        strengths: "A Revenant will travel at a significantly faster speed when hunting their prey.",
+        weaknesses: "Hiding from the Revenant will cause it to move very slowly."
     },
     {
         key: "shade",
         name: "Shade",
         evidence: [
             "emf_level_5",
-            "ghost_orb",
-            "ghost_writing"
+            "ghost_writing",
+            "freezing_temperatures"
         ],
-        description: "A Shade is known to be a shy ghost and evidence suggests that it will tend to stop all paranormal activity if there are multiple people in the vicinity.",
-        strengths: "Being shy means a Shade can be harder to find than other ghosts.",
-        weaknesses: "If there are multiple people nearby a Shade, the ghost will not enter hunting mode."
+        description: "A Shade is known to be very shy. There is evidence to suggest that a Shade will stop all paranormal activity if there are multiple people nearby.",
+        strengths: "Shades are much harder to find.",
+        weaknesses: "The ghost will not enter a hunt if there are multiple people nearby."
     },
     {
         key: "demon",
         name: "Demon",
         evidence: [
-            "spirit_box",
+            "fingerprints",
             "ghost_writing",
             "freezing_temperatures"
         ],
-        description: "A Demon is one of the worst ghosts your can encounter in Phasmophobia and it is known to attack its victims without a reason.",
-        strengths: "Demons will attack more often than any other ghost.",
-        weaknesses: "Asking a Demon successful questions on the Ouija Board won't lower the users sanity."
+        description: "Demons are the most aggressive ghosts we've ever encountered. Known to attack without reason, they seem to enjoy the thrill of the hunt.",
+        strengths: "Demons will initiate hunts more often than other ghosts.",
+        weaknesses: "Demons will drain less of your sanity when you use a Cursed Possession."
     },
     {
         key: "yurei",
         name: "Yurei",
         evidence: [
             "ghost_orb",
-            "ghost_writing",
-            "freezing_temperatures"
+            "freezing_temperatures",
+            "dots_projector"
         ],
         description: "A Yurei is a ghost that has returned to the physical world, usually for the purpose of revenge or hatred.",
-        strengths: "Yurei's tend to have a stronger effect on people's sanity.",
-        weaknesses: "Smudging the Yurei's room will cause it to not wander around the location for a long time."
+        strengths: "Yureis have been known to have a stronger effect on people sanity.",
+        weaknesses: "Smuding the Yurei's place of death will trap it temporarily, reducing how much it wanders."
     },
     {
         key: "oni",
         name: "Oni",
         evidence: [
             "emf_level_5",
-            "spirit_box",
-            "ghost_writing"
+            "freezing_temperatures",
+            "dots_projector"
         ],
-        description: "Oni, which are a cousin to the Demon, possess extreme strength and are known to become much more active around their prey.",
-        strengths: "Oni are much more active when people are nearby and have been seen to move objects at great speed.",
-        weaknesses: "Being more active will make the Oni easier to find and identify."
-    },
-    {
-        key: "hantu",
-        name: "Hantu",
-        evidence: [
-            "fingerprints",
-            "ghost_writing",
-            "ghost_orb"
-        ],
-        description: "A rare ghost that can be found in hot climates. They are known to attack more often in cold weather.",
-        strengths: "Moves faster in colder areas.",
-        weaknesses: "Moves slower in warmer areas."
+        description: "Onis love to scare their victims as much as possible before attacking. They are often seen in their physical form, guarding their place of death.",
+        strengths: "Onis are more active when people are nearby and have been seen moving objects at great speed.",
+        weaknesses: "Onis are very active, making them easier to find."
     },
     {
         key: "yokai",
@@ -192,11 +180,23 @@ var ghosts = [
         evidence: [
             "spirit_box",
             "ghost_orb",
-            "ghost_writing"
+            "dots_projector"
         ],
-        description: "A common type of ghost that is attracted to human voices. They can usually be found haunting family homes.",
-        strengths: "Talking near a Yokai will anger it and cause it to attack more often.",
-        weaknesses: "While hunting, it can only hear voices close to it."
+        description: "Yokai are common ghosts that are attracted to human voices. They can usually be found haunting family homes.",
+        strengths: "Talking near a Yokai will anger it, increasing the chance of an attack.",
+        weaknesses: "When hunting, a Yokai can only hear voices close to it."
+    },
+    {
+        key: "hantu",
+        name: "Hantu",
+        evidence: [
+            "fingerprints",
+            "ghost_orb",
+            "freezing_temperatures"
+        ],
+        description: "A Hantu is a rare ghost that thrives in the coldest climates. The cold seems to make them more aggressive and empowered.",
+        strengths: "Lower temperatures allow the Hantu to move at faster speeds.",
+        weaknesses: "Hantus move slower in warmer areas."
     },
     {
         key: "goryo",
@@ -206,21 +206,104 @@ var ghosts = [
             "fingerprints",
             "dots_projector"
         ],
-        description: "Using a video camera is the only way to view a Goryo, when it passes through a DOTS projector.",
-        strengths: "A Goryo will usually only show itself on cameras if there are no people nearby.",
+        description: "When a Goryo passes through a DOTS projector, using a video camera is the only way to see it.",
+        strengths: "A Goryo will usually only show itself on camera if there are no people nearby.",
         weaknesses: "They are rarely seen far from their place of death."
     },
     {
         key: "myling",
         name: "Myling",
         evidence: [
-            "emf_level_J",
+            "emf_level_5",
             "fingerprints",
             "ghost_writing"
         ],
-        description: "A Myling is a very vocal and active ghost. They are rumoured to be quiet when hunting their prey.",
+        description: "A Myling is a very vocal and active ghost. They are rumored to be quiet when hunting their prey.",
         strengths: "A Myling is known to be quieter when hunting.",
         weaknesses: "Mylings more frequently make paranormal sounds."
+    },
+    {
+        key: "onryo",
+        name: "Onryo",
+        evidence: [
+            "spirit_box",
+            "ghost_orb",
+            "freezing_temperatures"
+        ],
+        description: "The Onryo is often referred to as \"The Wrathful Spirit\". It steals souls from dying victims' bodies to seek revenge. This ghost has been known to fear any form of fire, and will do anything to be far from it.",
+        strengths: "Extinguishing a flame can cause an Onryo to attack.",
+        weaknesses: "When threatened, this ghost will be less likely to hunt."
+    },
+    {
+        key: "the_twins",
+        name: "The Twins",
+        evidence: [
+            "emf_level_5",
+            "spirit_box",
+            "freezing_temperatures"
+        ],
+        description: "These ghosts have been reported to mimic each other's actions. They alternate their attacks to confuse their prey.",
+        strengths: "Either Twin can be angered and initiate an attack on their prey.",
+        weaknesses: "The Twins will often interact with the environment at the same time."
+    },
+    {
+        key: "raiju",
+        name: "Raiju",
+        evidence: [
+            "emf_level_5",
+            "ghost_orb",
+            "dots_projector"
+        ],
+        description: "A Raiju is a demon that thrives on electrical current. While generally calm, they can become agitated when overwhelmed with power.",
+        strengths: "A Raiju can siphon power from nearby electrical devices, making it move faster.",
+        weaknesses: "Raiju are constantly disrupting electronic equipment when attacking, making it easier to track."
+    },
+    {
+        key: "obake",
+        name: "Obake",
+        evidence: [
+            "emf_level_5",
+            "fingerprints",
+            "ghost_orb"
+        ],
+        description: "Obake are terrifying shape-shifters, capable of taking on many forms. They have been seen taking on humanoid shapes to attract their prey.",
+        strengths: "When interacting with the environment, an Obake will rarely leave a trace.",
+        weaknesses: "Sometimes this ghost will shapeshift, leaving behind unique evidence."
+    },
+    {
+        key: "the_mimic",
+        name: "The Mimic",
+        evidence: [
+            "spirit_box",
+            "fingerprints",
+            "freezing_temperatures"
+        ],
+        description: "The Mimic is an elusive, mysterious copycat ghost that mirrors traits and behaviours from others, including other ghost types.",
+        strengths: "We're unsure what this ghost is capable of. Be careful.",
+        weaknesses: "Several reports have noted ghost orb sightings near mimics."
     }
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
